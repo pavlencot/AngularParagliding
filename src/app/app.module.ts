@@ -14,17 +14,23 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
+import { FlexLayoutModule } from "@angular/flex-layout";
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { FormComponent } from './shared/form/form.component';
+import { FormComponent } from './views/form/form.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { SigninComponent } from './views/signin/signin.component';
+import { RegistrationComponent } from './views/registration/registration.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FormComponent
+    FormComponent,
+    SigninComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatInputModule,
     MatNativeDateModule,
     MatSelectModule,
-    
+    FlexLayoutModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

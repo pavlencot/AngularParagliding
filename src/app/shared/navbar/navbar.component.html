@@ -4,9 +4,11 @@
 
     <div class="spacer"></div>
 
-    <a mat-button routerLink="#">HOME</a>
-    <a mat-button routerLink="#">COMPETITIONS</a>
-    <a mat-button routerLink="#">TANDEM</a>
-    <a mat-raised-button routerLink="#" color="accent">SIGN IN</a>
+    <div class="menu-btn">
+      <div class="btn"><a mat-button routerLink="#"  routerLinkActive="active">HOME</a></div>
+      <div class="btn"><a mat-button routerLink="#">COMPETITIONS</a></div>
+      <div class="btn"><a mat-button routerLink="#">TANDEM</a></div>
+      <div class="btn"><a mat-raised-button routerLink="../../views/signin/signin.component" color="accent">SIGN IN</a></div>
+    </div>
   </mat-toolbar>
 
