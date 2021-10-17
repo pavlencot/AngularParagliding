@@ -13,6 +13,11 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { FlexLayoutModule } from "@angular/flex-layout";
 
@@ -22,6 +27,14 @@ import { FormComponent } from './views/form/form.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { SigninComponent } from './views/signin/signin.component';
 import { RegistrationComponent } from './views/registration/registration.component';
+import { OrganizerProfileComponent } from './views/profile/organizer/organizer-profile/organizer-profile.component';
+import { PilotRegistrationComponent } from './views/registrations/pilot-registration/pilot-registration.component';
+import { OrganizerRegistrationComponent } from './views/registrations/organizer-registration/organizer-registration.component';
+import { PilotInstructorProfileComponent } from './views/profile/pilot-instructor-profile/pilot-instructor-profile.component';
+import { PilotProfileComponent } from './views/profile/pilot-profile/pilot-profile.component';
+import { HomePageComponent } from './views/home-page/home-page.component';
+import { CompetitionTableComponent } from './shared/competition-table/competition-table.component';
+import { CompetitionsPageComponent } from './views/competitions-page/competitions-page.component';
 
 
 @NgModule({
@@ -30,7 +43,16 @@ import { RegistrationComponent } from './views/registration/registration.compone
     NavbarComponent,
     FormComponent,
     SigninComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    OrganizerProfileComponent,
+    PilotRegistrationComponent,
+    OrganizerRegistrationComponent,
+    PilotInstructorProfileComponent,
+    PilotProfileComponent,
+    HomePageComponent,
+    CompetitionTableComponent,
+    CompetitionsPageComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -49,6 +71,11 @@ import { RegistrationComponent } from './views/registration/registration.compone
     MatNativeDateModule,
     MatSelectModule,
     FlexLayoutModule,
+    MatTableModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDividerModule,
+    MatTabsModule,
 
   ],
   providers: [],

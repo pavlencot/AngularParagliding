@@ -1,19 +1,27 @@
+.back {
+  height: 120%;
+  padding: 0%;
+  margin: 0%;
+  width: 100%;
+  background-size:cover;
+}
+
 .container {
   max-width: 40%;
-  height: 100%;
   margin: 30px auto;
-  overflow: auto;
-  min-height: 60%;
-  padding: 30px;
+  opacity: 0.9;
 }
 
 .form-container {
   text-align: center;
 }
 
+.mat-card-content {
+  margin: 0%;
+}
 
  .content-container {
-   width: 100%;
+   width: 80%;
    text-align: center;
    margin-left: auto;
    margin-right: auto;
@@ -21,4 +29,8 @@
 
  .field mat-form-field{
    width: 100%;
+ }
+
+ .mat-card-actions {
+   padding: 0%;
  }

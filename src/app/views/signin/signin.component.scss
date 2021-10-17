@@ -1,15 +1,22 @@
+.back {
+  height: 120%;
+  padding: 0%;
+  margin: 0%;
+  width: 100%;
+  background-size:cover;
+}
 .container {
-  max-width: 40%;
-  margin: 30px auto;
-  overflow: auto;
-  min-height: 60%;
-  padding: 30px;
+  opacity: 0.9;
 }
 
 .form-container {
   text-align: center;
-}
 
+  max-width: 40%;
+  margin: 30px auto;
+  min-height: 60%;
+  padding: 30px;
+}
 
  .content-container {
    width: 80%;

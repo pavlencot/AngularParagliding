@@ -1,0 +1,24 @@
+.back {
+  height: 120%;
+  padding: 0%;
+  margin: 0%;
+  width: 100%;
+  background-size:cover;
+}
+
+.container {
+  max-width: 80%;
+  margin: 30px auto;
+  opacity: 0.9;
+}
+
+.card {
+  text-align: center;
+  width: 80%;
+  // margin: auto;
+  margin-top: 2%;
+}
+
+agm-map {
+  height: 300px;
+}

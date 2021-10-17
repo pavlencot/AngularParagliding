@@ -1,5 +1,7 @@
-<div class="container">
-  <form [formGroup]="signinForm"  class="form-container"[ngStyle]="{backgroundImage:'url()'}">
+<div class="back"style="background-image:url(assets/img/login.jpg)">
+<app-navbar></app-navbar>
+  <div class="container">
+  <form [formGroup]="signinForm"  class="form-container">
     <mat-card>
       <div class="header">
           <mat-card-header>
@@ -28,9 +30,10 @@
 
         </mat-card-content>
         <mat-card-actions>
-          <button (click)="submit()" mat-raised-button color="accent">Save</button>
+          <button (click)="submit()" mat-raised-button color="accent">Sign in</button>
         </mat-card-actions>
 
     </mat-card>
   </form>
   </div>
+</div>

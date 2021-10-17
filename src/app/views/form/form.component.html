@@ -1,5 +1,7 @@
+<div class="back" style="background-image:url(assets/img/bg4.jpg)">
+<app-navbar></app-navbar>
 <div class="container">
-<form [formGroup]="myForm"  class="form-container"[ngStyle]="{backgroundImage:'url()'}">
+<form [formGroup]="myForm"  class="form-container">
   <mat-card>
     <div class="header">
         <mat-card-header>
@@ -54,9 +56,10 @@
         </div>
       </mat-card-content>
       <mat-card-actions>
-        <button (click)="saveForm()" mat-raised-button color="accent">Save</button>
+        <button (click)="saveForm()" mat-raised-button color="accent">Submit</button>
       </mat-card-actions>
 
   </mat-card>
 </form>
+</div>
 </div>
