@@ -8,6 +8,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormComponent } from './views/form/form.component';
 import { SigninComponent } from './views/signin/signin.component';
 import { PilotInstructorProfileComponent } from './views/profile/pilot-instructor-profile/pilot-instructor-profile.component';
+import { OrganizerCompetitionsComponent } from './views/profile/organizer/organizer-competitions/organizer-competitions.component';
+import { OrganizerEditComponent } from './views/profile/organizer/organizer-edit/organizer-edit.component';
 
 const routes: Routes = [
   {
@@ -29,7 +31,20 @@ const routes: Routes = [
   },
   {
     path: 'organizer-profile',
-    component: OrganizerProfileComponent
+    // component: OrganizerProfileComponent
+    children: [{
+        path: ':id',
+        component: OrganizerProfileComponent
+      },
+      {
+        path: 'competitions/:id',
+        component: OrganizerCompetitionsComponent
+      },
+      {
+        path: 'edit/:id',
+        component: OrganizerEditComponent
+      }
+    ]
   },
   {
     path: 'pilot-profile',

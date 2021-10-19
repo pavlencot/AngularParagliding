@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ViewChild} from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 export interface Competition {
   name: string;
@@ -10,6 +13,12 @@ export interface Competition {
 const DATA: Competition[] = [
   {name: "Competition 1", country: 'Macedonia', periodFrom: new Date('01-10-2022'), periodTo: new Date('01-21-2022')},
   {name: "Competition 2", country: 'Austria', periodFrom: new Date('05-10-2022'), periodTo: new Date('05-11-2022')},
+  {name: "Competition 3", country: 'Romania', periodFrom: new Date('02-12-2022'), periodTo: new Date('02-22-2022')},
+  {name: "Competition 1", country: 'Macedonia', periodFrom: new Date('01-10-2022'), periodTo: new Date('01-21-2022')},
+  {name: "Competition 2", country: 'Austria', periodFrom: new Date('05-10-2022'), periodTo: new Date('05-11-2022')},
+  {name: "Competition 3", country: 'Romania', periodFrom: new Date('02-12-2022'), periodTo: new Date('02-22-2022')},
+  {name: "Competition 1", country: 'Macedonia', periodFrom: new Date('01-10-2022'), periodTo: new Date('01-21-2022')},
+  {name: "Competition 2", country: 'Austria', periodFrom: new Date('05-10-2022'), periodTo: new Date('05-11-2022')},
   {name: "Competition 3", country: 'Romania', periodFrom: new Date('02-12-2022'), periodTo: new Date('02-22-2022')}
 ]
 
@@ -18,17 +27,21 @@ const DATA: Competition[] = [
   templateUrl: './competition-table.component.html',
   styleUrls: ['./competition-table.component.scss']
 })
-export class CompetitionTableComponent implements OnInit {
+export class CompetitionTableComponent implements AfterViewInit {
   displayedColumns: string[] = ['name', 'country', 'periodFrom', 'periodTo'];
 
-  dataSource = DATA;
+  dataSource = new MatTableDataSource<Competition>(DATA);
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
-  constructor() { }
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
 
-  ngOnInit(): void {
   }
 
   // displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   // dataSource = ELEMENT_DATA;
+
 }

@@ -9,8 +9,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class SigninComponent {
 
   signin: FormGroup = new FormGroup({
-    email: new FormControl('', [Validators.email, Validators.required ]),
-    password: new FormControl('', [Validators.required, Validators.min(3) ])
+    login: new FormControl('', [Validators.email, Validators.required ]),
+    password: new FormControl('', [Validators.required, Validators.min(8) ])
   });
 
   hide = true;
@@ -27,7 +27,7 @@ export class SigninComponent {
 
 
   signinForm = this.fb.group({
-    name: [''],
+    login: [''],
     password: [''],
 
 

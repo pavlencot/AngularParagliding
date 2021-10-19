@@ -4,11 +4,11 @@
 <mat-sidenav-container  class="container">
   <mat-sidenav class="left-side" mode="side" opened>
     <mat-list>
-      <mat-list-item><a class="profile" href="/organizer-profile">Profile</a></mat-list-item>
+      <mat-list-item><a class="profile" href="/organizer-profile/:id">Profile</a></mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item><a class="competitions" href="#">Competitions</a></mat-list-item>
+      <mat-list-item><a class="competitions" href="/organizer-profile/competitions/:id">Competitions</a></mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item><a class="editProfile" href="#">Edit Profile</a></mat-list-item>
+      <mat-list-item><a class="editProfile" href="/organizer-profile/edit/:id">Edit Profile</a></mat-list-item>
       <mat-divider></mat-divider>
      </mat-list>
   </mat-sidenav>

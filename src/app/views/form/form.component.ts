@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder} from '@angular/forms'
+import { FormGroup, FormBuilder, FormControl} from '@angular/forms'
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 
@@ -15,6 +15,14 @@ interface Location {
 })
 export class FormComponent implements OnInit {
 selectedLocation?: string;
+bookingForm: FormGroup = new FormGroup({
+  name: new FormControl(),
+  phoneNumber: new FormControl(),
+  email: new FormControl(),
+  date: new FormControl(),
+  location: new FormControl()
+})
+
 
 locations: Location[] = [
   {value: "molovata", viewValue: "Molovata"},
