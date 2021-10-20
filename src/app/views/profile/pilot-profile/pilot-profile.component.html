@@ -27,8 +27,8 @@
               <mat-list-item> Country:  {{country}}</mat-list-item>
               <mat-list-item> Licence Id: {{licenceNr}}</mat-list-item>
               <mat-list-item> Category: {{category}}</mat-list-item>
-              <mat-list-item> Issued On: {{issuedOn}}</mat-list-item>
-              <mat-list-item> Valid Intil: {{validUntil}}</mat-list-item>
+              <mat-list-item> Issued On: {{issuedOn | date:"MMM dd YYYY"}}</mat-list-item>
+              <mat-list-item> Valid Intil: {{validUntil | date:"MMM dd YYYY"}}</mat-list-item>
              </mat-list>
           </mat-card-content>
       </mat-card>

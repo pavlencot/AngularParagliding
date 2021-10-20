@@ -1,3 +1,4 @@
+import { FlightLocationModel } from './../models/booking/flightLocation.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -16,12 +17,16 @@ export class FlightFormService {
   }
 
   createBooking(booking: FlightFormModel): Observable<string> {
-    return this._httpClient.post<string>(`${this.apiUrl}/flight-form/`, FlightFormModel);
+    return this._httpClient.post<string>(`${this.apiUrl}/flight-form`, FlightFormModel);
 
   }
 
 
   getBooking(id: string): Observable<FlightFormModel> {
     return this._httpClient.get<FlightFormModel>(`${this.apiUrl}/bookings/${id}`);
+  }
+
+  getAllFlightLocations(): Observable<FlightLocationModel> {
+    return this._httpClient.get<FlightLocationModel>(`${this.apiUrl}/flight-form`);
   }
 }

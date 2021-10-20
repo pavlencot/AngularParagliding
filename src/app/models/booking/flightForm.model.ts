@@ -1,13 +1,13 @@
 import { FlightLocationModel } from "./flightLocation.model";
 
 export class FlightFormModel {
-  id!: number;
+  // id!: number;
   name!: string;
   phoneNumber!: string;
   email!: string;
   date!: Date;
-  locationId!: number;
+  //locationId!: number;
   location!: FlightLocationModel;
-  instructor?: number;
+  //instructor?: number;
   // instructor?: InstructorModel;
 }

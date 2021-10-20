@@ -1,5 +1,9 @@
+import { FlightLocationModel } from './../../models/booking/flightLocation.model';
+import { BookingLocationService } from './../../services/booking-location.service';
+import { FlightFormService } from './../../services/flightForm.service';
+import { FlightFormModel } from './../../models/booking/flightForm.model';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl} from '@angular/forms'
+import { FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms'
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 
@@ -14,39 +18,80 @@ interface Location {
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
+//booking?: FlightFormModel;
 selectedLocation?: string;
-bookingForm: FormGroup = new FormGroup({
-  name: new FormControl(),
-  phoneNumber: new FormControl(),
-  email: new FormControl(),
-  date: new FormControl(),
-  location: new FormControl()
-})
+isUpdating: boolean = false;
+myForm!: FormGroup;
+locations!: FlightLocationModel[];
+
+constructor(private _formBuilder: FormBuilder,
+  private _flightFormService: FlightFormService,
+  private _bookingLocationService: BookingLocationService)
+  { }
 
 
-locations: Location[] = [
-  {value: "molovata", viewValue: "Molovata"},
-  {value: "orheiulVechi", viewValue: "Orheiul Vechi"},
-  {value: "aneniiNoi", viewValue: "Anenii Noi"},
-  {value: "roghi", viewValue: "Roghi"}
-];
 
-  constructor(private fb: FormBuilder) { }
+// locations: Location[] = [
+//   {value: "molovata", viewValue: "Molovata"},
+//   {value: "orheiulVechi", viewValue: "Orheiul Vechi"},
+//   {value: "aneniiNoi", viewValue: "Anenii Noi"},
+//   {value: "roghi", viewValue: "Roghi"}
+// ];
+
 
   ngOnInit(): void {
+    this.initForm();
+
+    this._bookingLocationService.getFlightLocations().subscribe();
+
+    // this.locations.forEach()
+
   }
 
-myForm = this.fb.group({
-      name: [''],
-      phoneNumber: [''],
-      email: [''],
-      date: [''],
-      location: ['']
+  initForm(): void {
+    this.myForm = this._formBuilder.group({
+      name: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      phoneNumber: new FormControl('',[Validators.required, Validators.maxLength(12)]),
+      email: new FormControl('',[Validators.required, Validators.email]),
+      date: new FormControl('',[Validators.required]),
+      location: new FormControl('',[Validators.required])
 
   });
+}
 
-  saveForm(){
-    console.log('Form data is ', this.myForm.value);
+  createBooking() : void {
+    const booking: FlightFormModel = {
+      name: this.myForm.controls['name'].value,
+      phoneNumber: this.myForm.controls['phoneNumber'].value,
+      email: this.myForm.controls['email'].value,
+      date: this.myForm.controls['date'].value,
+      location: this.myForm.controls['location'].value
+    }
+    this.isUpdating = true;
+
+    this._flightFormService.createBooking(booking).subscribe();
   }
+
+  onSubmit() : void{
+    const model: FlightFormModel = {...this.myForm.value};
+
+    this._bookingLocationService.getFlightLocations().subscribe();
+
+
+    //this._flightFormService.createBooking(model)
+
+    //console.log('Form data is ', this.myForm.value);
+  }
+
+  // validateDate(date: Date) : boolean{
+  //   if(date < Date.now)
+  //   {
+  //     return false;
+  //   }
+  //   else
+  //   {
+  //     return true;
+  //   }
+  // }
 
 }
