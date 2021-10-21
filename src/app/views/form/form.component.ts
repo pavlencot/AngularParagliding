@@ -1,3 +1,4 @@
+import { LocationModel } from './../../models/location.model';
 import { FlightLocationModel } from './../../models/booking/flightLocation.model';
 import { BookingLocationService } from './../../services/booking-location.service';
 import { FlightFormService } from './../../services/flightForm.service';
@@ -19,7 +20,7 @@ interface Location {
 })
 export class FormComponent implements OnInit {
 //booking?: FlightFormModel;
-selectedLocation?: string;
+selectedLocation: string = 'test';
 isUpdating: boolean = false;
 myForm!: FormGroup;
 locations!: FlightLocationModel[];
@@ -29,22 +30,13 @@ constructor(private _formBuilder: FormBuilder,
   private _bookingLocationService: BookingLocationService)
   { }
 
-
-
-// locations: Location[] = [
-//   {value: "molovata", viewValue: "Molovata"},
-//   {value: "orheiulVechi", viewValue: "Orheiul Vechi"},
-//   {value: "aneniiNoi", viewValue: "Anenii Noi"},
-//   {value: "roghi", viewValue: "Roghi"}
-// ];
-
-
   ngOnInit(): void {
     this.initForm();
 
-    this._bookingLocationService.getFlightLocations().subscribe();
-
-    // this.locations.forEach()
+    this._bookingLocationService.getFlightLocations()
+    .subscribe((locations: FlightLocationModel[]) => {
+      this.locations = locations
+    });
 
   }
 
@@ -59,7 +51,8 @@ constructor(private _formBuilder: FormBuilder,
   });
 }
 
-  createBooking() : void {
+
+  createBooking(): void {
     const booking: FlightFormModel = {
       name: this.myForm.controls['name'].value,
       phoneNumber: this.myForm.controls['phoneNumber'].value,
@@ -72,16 +65,9 @@ constructor(private _formBuilder: FormBuilder,
     this._flightFormService.createBooking(booking).subscribe();
   }
 
-  onSubmit() : void{
-    const model: FlightFormModel = {...this.myForm.value};
-
-    this._bookingLocationService.getFlightLocations().subscribe();
-
-
-    //this._flightFormService.createBooking(model)
-
-    //console.log('Form data is ', this.myForm.value);
-  }
+  // onSubmit() : void{
+  //   console.log('Form data is ', this.myForm.value);
+  // }
 
   // validateDate(date: Date) : boolean{
   //   if(date < Date.now)

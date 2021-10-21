@@ -1,7 +1,6 @@
 import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { FilterOperators } from '../models/pageRequest/enums/FilterOperators';
 import { PagedRequest } from '../models/pageRequest/pagedRequest.model';
 
 @Injectable({
@@ -27,12 +26,8 @@ export class EnvironmentUrlService {
         if (filter.value) {
           params = params.append(`RequestFilters.Filters[${index}].Value`, filter.value)
         }
-
-        params = params.append(`RequestFilters.Filters[${index}].operator`, filter.operator ?? FilterOperators.Equals)
       })
-
     }
-
     return params;
   }
 }

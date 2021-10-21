@@ -1,7 +1,7 @@
 <div class="back" style="background-image:url(assets/img/bg4.jpg)">
 <app-navbar></app-navbar>
 <div class="container">
-<form [formGroup]="myForm"  class="form-container">
+<form [formGroup]="myForm" class="form-container" action="/booking">
   <mat-card>
     <div class="header">
         <mat-card-header>
@@ -48,16 +48,21 @@
             <mat-form-field>
               <mat-label>Choose a place: </mat-label>
               <mat-select [(ngModel)]="selectedLocation" formControlName="location">
-                <!-- <mat-option *ngFor="let location of locations" [value]="location.name">
-                  {{location.name}}
-                </mat-option> -->
+                <mat-option *ngFor="let location of locations" [value]="location.startLocation">
+                  {{location.startLocation}}
+                </mat-option>
               </mat-select>
+              <!-- <mat-select [(value)]="selectedLocation" formControlName="location">
+                <mat-option *ngFor="let location of locationsList" value="{{location}}">
+                  {{location}}
+                </mat-option>
+              </mat-select> -->
             </mat-form-field>
           </div>
         </div>
       </mat-card-content>
       <mat-card-actions>
-        <button (click)="onSubmit()" mat-raised-button color="accent">Submit</button>
+        <button (click)="createBooking()" mat-raised-button color="accent">Submit</button>
       </mat-card-actions>
 
   </mat-card>

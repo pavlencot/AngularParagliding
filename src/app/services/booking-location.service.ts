@@ -13,7 +13,7 @@ export class BookingLocationService {
   constructor(private _httpClient: HttpClient) {
   }
 
-  getFlightLocations(): Observable<FlightLocationModel> {
-    return this._httpClient.get<FlightLocationModel>(`${this.apiUrl}/flight-form/`);
+  getFlightLocations(): Observable<FlightLocationModel[]> {
+    return this._httpClient.get<FlightLocationModel[]>(`${this.apiUrl}/BookingLocations`);
   }
 }

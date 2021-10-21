@@ -1,10 +1,19 @@
+import { MatPaginator } from "@angular/material/paginator";
+import { MatSort } from "@angular/material/sort";
 import { RequestFilters } from "./requestFilters.model";
 
-export interface PagedRequest {
+export class PagedRequest {
   pageIndex: number;
   pageSize: number;
   columnNameForSorting: string;
   sortDirection: string;
-  requestFilters?: RequestFilters;
+  requestFilters: RequestFilters;
 
+  constructor(paginator: MatPaginator, sort: MatSort, filters: RequestFilters) {
+    this.pageIndex = paginator.pageIndex;
+    this.pageSize = paginator.pageSize;
+    this.columnNameForSorting = sort.active;
+    this.sortDirection = sort.direction;
+    this.requestFilters = filters;
+}
 }

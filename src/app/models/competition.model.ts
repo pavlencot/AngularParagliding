@@ -3,11 +3,8 @@ import { LocationModel } from "./location.model";
 import { ParticipantModel } from "./participant.model";
 
 export class CompetitionModel {
-  id!: number;
-  competitionCode!: number;
-  locationId!: number;
-  location!: LocationModel;
-
-  participants?: ParticipantModel[];
-  competitionOrganizers?: CompetitionOrganizerModel[];
+  name!: string;
+  location!: string;
+  periodFrom!: Date;
+  periodTo!: Date;
 }
