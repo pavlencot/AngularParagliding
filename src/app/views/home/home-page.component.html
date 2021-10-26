@@ -9,14 +9,23 @@
         <mat-tab label="Fly with us!">
           <mat-card class="card">
             <mat-card-title-group>
-              <mat-card-title>Book your flight now</mat-card-title>
+              <mat-card-title>Make your dream come true!</mat-card-title>
               <mat-card-subtitle>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos laboriosam nostrum,
-                doloribus quia magnam ad consequatur dicta praesentium quasi debitis suscipit facilis laudantium laborum sint neque?
-                Nobis rerum temporibus voluptates!
-              </mat-card-subtitle>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fuga nemo libero.
+                  Iure repellendus quibusdam quas laudantium consequuntur libero nam consequatur voluptatibus cupiditate dicta voluptatum voluptates quasi beatae, alias quae.
+                </p>
+                </mat-card-subtitle>
             </mat-card-title-group>
             <mat-card-content>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit eum dolor in perspiciatis,
+                molestias eius quasi maiores architecto, exercitationem molestiae suscipit est?
+                Magni adipisci eveniet quod reiciendis optio, dolores recusandae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat provident corporis asperiores sit doloremque totam,
+                tenetur praesentium veniam. Deserunt ipsa quasi iure quod ratione quo recusandae nesciunt pariatur, quaerat est.
+              </p>
+              <button routerLink="/flight-form" mat-raised-button color="accent">Book a flight</button>
             </mat-card-content>
           </mat-card>
         </mat-tab>
@@ -28,13 +37,15 @@
             <mat-card-title-group>
               <mat-card-title>Upcoming events</mat-card-title>
               <mat-card-subtitle>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos laboriosam nostrum,
-                doloribus quia magnam ad consequatur dicta praesentium quasi debitis suscipit facilis laudantium laborum sint neque?
-                Nobis rerum temporibus voluptates!
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos laboriosam nostrum,
+                  doloribus quia magnam ad consequatur dicta praesentium quasi debitis suscipit facilis laudantium laborum sint neque?
+                  Nobis rerum temporibus voluptates!
+                </p>
               </mat-card-subtitle>
             </mat-card-title-group>
             <mat-card-content>
-                <app-competition-table></app-competition-table>
+                <app-paginated-table></app-paginated-table>
             </mat-card-content>
           </mat-card>
         </mat-tab>
@@ -52,6 +63,18 @@
               </mat-card-subtitle>
             </mat-card-title-group>
             <mat-card-content>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sapiente exercitationem architecto tempora veritatis odit eum quis laboriosam laborum tempore.
+                Porro nostrum totam facilis quia officiis earum explicabo eius ipsa deleniti.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
+                commodi dolores sequi provident sint fugit exercitationem recusandae dignissimos.
+                Libero laborum placeat soluta odit. Reprehenderit dicta amet sed pariatur odit quos?
+              </p>
+              <mat-card-actions>
+                <p>Sign in to create an event!</p>
+                <button routerLink="/signin" mat-raised-button color="accent">Sign in</button>
+              </mat-card-actions>
             </mat-card-content>
           </mat-card>
         </mat-tab>
