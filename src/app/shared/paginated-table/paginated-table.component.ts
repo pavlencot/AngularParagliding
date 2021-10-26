@@ -16,7 +16,7 @@ import { merge } from 'rxjs';
   templateUrl: './paginated-table.component.html',
   styleUrls: ['./paginated-table.component.scss']
 })
-export class PaginatedTableComponent implements AfterViewInit, OnInit {
+export class PaginatedTableComponent implements AfterViewInit {
   pagedCompetitions!: PagedResult<CompetitionModel>;
   pagedRequest!: PagedRequest;
 
@@ -55,10 +55,6 @@ export class PaginatedTableComponent implements AfterViewInit, OnInit {
       location: ['']
     });
   }
-  ngOnInit(): void {
-    // console.log('fefvgdfebrghg')
-    // this.loadCompetitionsFromApi();
-  }
 
   ngAfterViewInit() {
     console.log(this.sort);
@@ -71,9 +67,8 @@ export class PaginatedTableComponent implements AfterViewInit, OnInit {
   }
 
   loadCompetitionsFromApi() {
-    //const paginatedRequest = new PagedRequest();
-    //console.log(paginatedRequest)
-    this._competitionService.getCompetitionsPaged(this.pagedRequest)
+    const paginatedRequest = new PagedRequest(this.paginator, this.sort, '');
+    this._competitionService.getCompetitionsPaged(paginatedRequest)
       .subscribe((pagedCompetitions: PagedResult<CompetitionModel>) => {
         console.log(this.pagedCompetitions);
         this.pagedCompetitions = pagedCompetitions;

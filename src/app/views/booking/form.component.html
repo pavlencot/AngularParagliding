@@ -14,14 +14,14 @@
           <div class="field">
             <mat-form-field>
               <mat-label>Name: </mat-label>
-              <input matInput formControlName="name" placeholder="Type your name...">
+              <input matInput [maxlength]="50" formControlName="name" placeholder="Type your name...">
             </mat-form-field>
           </div>
 
           <div class="field">
             <mat-form-field>
               <mat-label>Phone number: </mat-label>
-              <input matInput formControlName="phoneNumber" placeholder="Type your phone number...">
+              <input matInput [maxlength]="12" formControlName="phoneNumber" placeholder="Type your phone number...">
               <mat-icon matSuffix>phone</mat-icon>
             </mat-form-field>
           </div>
@@ -29,7 +29,7 @@
           <div class="field">
             <mat-form-field>
               <mat-label>E-mail: </mat-label>
-              <input matInput formControlName="email" placeholder="Type your e-mail...">
+              <input matInput [maxlength]="50" formControlName="email" placeholder="Type your e-mail...">
               <mat-icon matSuffix>email</mat-icon>
             </mat-form-field>
           </div>
