@@ -7,13 +7,30 @@ export class PagedRequest {
   pageSize: number;
   columnNameForSorting: string;
   sortDirection: string;
-  requestFilters: RequestFilters;
+  filter: string;
+  requestFilters?: RequestFilters;
 
-  constructor(paginator: MatPaginator, sort: MatSort, filters: RequestFilters) {
+  constructor(paginator: MatPaginator, sort: MatSort, filter: string) {
+    console.log(paginator)
     this.pageIndex = paginator.pageIndex;
     this.pageSize = paginator.pageSize;
     this.columnNameForSorting = sort.active;
     this.sortDirection = sort.direction;
-    this.requestFilters = filters;
+    this.filter = filter;
+}
+
+public static buildQueryString(request: PagedRequest) : string {
+  let query: string = `pageSize=${request.pageSize}&pageIndex=${request.pageIndex}`;
+  if(request.filter !== undefined && request.filter !== null){
+      query += `&filter=${request.filter}`;
+  }
+  if(request.columnNameForSorting !== undefined && request.columnNameForSorting !== null){
+      query += `&columnNameForSorting=${request.columnNameForSorting}`;
+  }
+  if(request.sortDirection !== undefined && request.sortDirection !== null){
+      query += `&sortDirection=${request.sortDirection}`;
+  }
+
+  return query
 }
 }

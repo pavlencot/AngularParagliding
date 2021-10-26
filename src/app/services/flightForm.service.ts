@@ -17,16 +17,13 @@ export class FlightFormService {
   }
 
   createBooking(booking: FlightFormModel): Observable<string> {
-    return this._httpClient.post<string>(`${this.apiUrl}/flight-form`, FlightFormModel);
+    return this._httpClient.post<string>(`${this.apiUrl}/Bookings`, booking);
 
   }
 
 
-  getBooking(id: string): Observable<FlightFormModel> {
-    return this._httpClient.get<FlightFormModel>(`${this.apiUrl}/bookings/${id}`);
+  getBooking(id: number): Observable<FlightFormModel> {
+    return this._httpClient.get<FlightFormModel>(`${this.apiUrl}/Bookings/${id}`);
   }
 
-  getAllFlightLocations(): Observable<FlightLocationModel> {
-    return this._httpClient.get<FlightLocationModel>(`${this.apiUrl}/flight-form`);
-  }
 }

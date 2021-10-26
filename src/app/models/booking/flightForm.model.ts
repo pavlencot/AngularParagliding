@@ -1,3 +1,4 @@
+import { PilotInstructorModel } from "../user/pilotInstructor/pilotInstructor.model";
 import { FlightLocationModel } from "./flightLocation.model";
 
 export class FlightFormModel {
@@ -5,5 +6,6 @@ export class FlightFormModel {
   phoneNumber!: string;
   email!: string;
   date!: Date;
-  location!: FlightLocationModel;
+  bookingLocationId!: number;
+  pilotInstructorId!: number;
 }

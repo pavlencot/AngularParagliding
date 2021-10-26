@@ -24,9 +24,11 @@
     "@angular/router": "~12.2.0",
     "@auth0/angular-jwt": "^5.0.2",
     "@types/googlemaps": "^11.0.0",
+    "angular-osm": "^1.2.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "x2js": "^3.4.2",
+    "zone.js": "^0.11.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.2.5",

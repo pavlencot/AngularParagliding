@@ -1,3 +1,4 @@
+import { MaterialModule } from './material.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -17,16 +18,17 @@ import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
-// import { MatSort } from '@angular/material/sort';
+import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatRadioModule } from '@angular/material/radio';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { FormComponent } from './views/form/form.component';
+import { FormComponent } from './views/booking/form.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { SigninComponent } from './views/signin/signin.component';
 import { RegistrationComponent } from './views/registration/registration.component';
@@ -35,9 +37,9 @@ import { PilotRegistrationComponent } from './views/registrations/pilot-registra
 import { OrganizerRegistrationComponent } from './views/registrations/organizer-registration/organizer-registration.component';
 import { PilotInstructorProfileComponent } from './views/profile/pilot-instructor-profile/pilot-instructor-profile.component';
 import { PilotProfileComponent } from './views/profile/pilot-profile/pilot-profile.component';
-import { HomePageComponent } from './views/home-page/home-page.component';
+import { HomePageComponent } from './views/home/home-page.component';
 import { CompetitionTableComponent } from './shared/competition-table/competition-table.component';
-import { CompetitionsPageComponent } from './views/competitions-page/competitions-page.component';
+import { CompetitionsPageComponent } from './views/competitions/competitions-page.component';
 // import { environment } from 'src/environments/environment';
 import { OrganizerCompetitionsComponent } from './views/profile/organizer/organizer-competitions/organizer-competitions.component';
 import { OrganizerEditComponent } from './views/profile/organizer/organizer-edit/organizer-edit.component';
@@ -69,24 +71,12 @@ import { PaginatedTableComponent } from './shared/paginated-table/paginated-tabl
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
+
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
-    MatDatepickerModule,
-    MatRadioModule,
-    MatCardModule,
-    MatInputModule,
-    MatNativeDateModule,
-    MatSelectModule,
+
     FlexLayoutModule,
-    MatTableModule,
-    MatSidenavModule,
-    MatListModule,
-    MatDividerModule,
-    MatTabsModule,
+    MaterialModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: () => localStorage.getItem('accessToken'),
@@ -94,8 +84,6 @@ import { PaginatedTableComponent } from './shared/paginated-table/paginated-tabl
         // blacklistedRoutes: [environment.blacklistedRoutes]
    }}),
    HttpClientModule,
-   MatPaginatorModule,
-  //  MatSort,
 
   ],
   providers: [],

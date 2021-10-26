@@ -1,4 +1,4 @@
-import { CompetitionModel } from "./competition.model";
+import { CompetitionModel } from "./competition/competitionCreate.model";
 import { OrganizerModel } from "./organizer/organizer.model";
 
 export class CompetitionOrganizerModel {

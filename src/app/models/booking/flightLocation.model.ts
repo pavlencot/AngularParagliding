@@ -1,4 +1,4 @@
 export class FlightLocationModel {
-  // id!: number;
+  id!: number;
   startLocation!: string;
 }

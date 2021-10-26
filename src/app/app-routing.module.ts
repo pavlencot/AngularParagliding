@@ -1,11 +1,11 @@
-import { CompetitionsPageComponent } from './views/competitions-page/competitions-page.component';
-import { HomePageComponent } from './views/home-page/home-page.component';
+import { CompetitionsPageComponent } from './views/competitions/competitions-page.component';
+import { HomePageComponent } from './views/home/home-page.component';
 import { PilotProfileComponent } from './views/profile/pilot-profile/pilot-profile.component';
 import { OrganizerProfileComponent } from './views/profile/organizer/organizer-profile/organizer-profile.component';
 import { RegistrationComponent } from './views/registration/registration.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormComponent } from './views/form/form.component';
+import { FormComponent } from './views/booking/form.component';
 import { SigninComponent } from './views/signin/signin.component';
 import { PilotInstructorProfileComponent } from './views/profile/pilot-instructor-profile/pilot-instructor-profile.component';
 import { OrganizerCompetitionsComponent } from './views/profile/organizer/organizer-competitions/organizer-competitions.component';

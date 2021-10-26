@@ -28,6 +28,28 @@ const DATA: Competition[] = [
   styleUrls: ['./competition-table.component.scss']
 })
 export class CompetitionTableComponent implements AfterViewInit {
+  // pagedCompetitions!: PagedResult<CompetitionModel>;
+
+  // tableColumns: TableColumn[] = [
+  //   {name: 'competitionName', index: 'competitionName', displayName: 'Competition Name'},
+  //   {name: 'location', index: 'location', displayName: 'Location'},
+  //   {name: 'periodFrom', index: 'periodFrom', displayName: 'From'},
+  //   {name: 'periodTo', index: 'periodTo', displayName: 'To'}
+  // ]
+
+  // displayedColumns!: string[];
+
+  // @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;
+  // @ViewChild(MatSort, {static: false}) sort!: MatSort;
+
+
+  // constructor(private _competitionService: CompetitionService) {
+  //   this.displayedColumns = this.tableColumns.map(column => column.name);
+  // }
+
+  // ngAfterViewInit(): void {
+  //   throw new Error('Method not implemented.');
+  // }
   displayedColumns: string[] = ['name', 'country', 'periodFrom', 'periodTo'];
 
   dataSource = new MatTableDataSource<Competition>(DATA);
@@ -40,8 +62,5 @@ export class CompetitionTableComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
 
   }
-
-  // displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  // dataSource = ELEMENT_DATA;
 
 }
