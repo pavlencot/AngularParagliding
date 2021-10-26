@@ -12,39 +12,63 @@
           <div class="content-container">
             <div class="field">
               <mat-form-field>
-                <mat-label>Login </mat-label>
-                <input matInput formControlName="name" placeholder="Enter organization name...">
+                <mat-label>First Name </mat-label>
+                <input matInput formControlName="firstName" placeholder="Enter your first name...">
               </mat-form-field>
             </div>
 
             <div class="field">
               <mat-form-field>
-                <mat-label>Code </mat-label>
-                <input matInput formControlName="code" placeholder="Enter organization code...">
+                <mat-label>Last Name </mat-label>
+                <input matInput formControlName="lastName" placeholder="Enter your last name...">
               </mat-form-field>
             </div>
 
             <div class="field">
               <mat-form-field >
-                <mat-label>Address </mat-label>
-                <input matInpu formControlName="address" placeholder="Enter address...">
+                <mat-label>Username </mat-label>
+                <input matInpu formControlName="username" placeholder="Enter your username...">
+              </mat-form-field>
+            </div>
+
+            <div class="field">
+              <mat-form-field>
+                <mat-label>Email </mat-label>
+                <input matInput formControlName="email" placeholder="Enter your email...">
               </mat-form-field>
             </div>
 
             <div class="field">
               <mat-form-field>
                 <mat-label>Phone Number </mat-label>
-                <input matInput formControlName="phoneNumber" placeholder="Enter phone number...">
+                <input matInput formControlName="phoneNumber" placeholder="Enter your phone number...">
               </mat-form-field>
             </div>
 
             <div class="field">
               <mat-form-field>
-                <mat-label>Description </mat-label>
-                <input matInput formControlName="description" placeholder="Add company description...">
+                <mat-label>Password </mat-label>
+                <input matInput formControlName="password" placeholder="Enter your password...">
               </mat-form-field>
             </div>
 
+            <div class="field">
+              <mat-form-field>
+                <mat-label>Confirm Password </mat-label>
+                <input matInput formControlName="confirmPassword" placeholder="Confirm password...">
+              </mat-form-field>
+            </div>
+
+            <div class="field">
+              <mat-radio-group aria-label="Select an option" >
+                <mat-label>Pilot</mat-label>
+                <mat-radio-button formControlName="role" value="1"></mat-radio-button>
+                <mat-label>Instructor</mat-label>
+                <mat-radio-button formControlName="role" value="2"></mat-radio-button>
+                <mat-label>Organizer</mat-label>
+                <mat-radio-button formControlName="role" value="3"></mat-radio-button>
+              </mat-radio-group>
+            </div>
           </div>
 
         </mat-card-content>
