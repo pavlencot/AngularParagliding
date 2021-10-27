@@ -57,7 +57,6 @@ export class PaginatedTableComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log(this.sort);
     this.loadCompetitionsFromApi();
     this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
 
@@ -70,7 +69,6 @@ export class PaginatedTableComponent implements AfterViewInit {
     const paginatedRequest = new PagedRequest(this.paginator, this.sort, '');
     this._competitionService.getCompetitionsPaged(paginatedRequest)
       .subscribe((pagedCompetitions: PagedResult<CompetitionModel>) => {
-        console.log(this.pagedCompetitions);
         this.pagedCompetitions = pagedCompetitions;
       });
   }

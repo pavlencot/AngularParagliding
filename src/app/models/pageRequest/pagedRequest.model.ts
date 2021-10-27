@@ -11,7 +11,6 @@ export class PagedRequest {
   requestFilters?: RequestFilters;
 
   constructor(paginator: MatPaginator, sort: MatSort, filter: string) {
-    console.log(paginator)
     this.pageIndex = paginator.pageIndex;
     this.pageSize = paginator.pageSize;
     this.columnNameForSorting = sort.active;

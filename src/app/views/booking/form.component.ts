@@ -52,7 +52,7 @@ export class FormComponent implements OnInit {
   initForm(): void {
     this.myForm = this._formBuilder.group({
       name: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-      phoneNumber: new FormControl('',[Validators.required, Validators.maxLength(12)]),
+      phoneNumber: new FormControl('',[Validators.required, Validators.maxLength(12), Validators.pattern('^((\\+373-?)|0)?[0-9]$')]),
       email: new FormControl('',[Validators.required, Validators.email]),
       date: new FormControl('',[Validators.required]),
       location: new FormControl('',[Validators.required]),
@@ -71,5 +71,7 @@ export class FormComponent implements OnInit {
     }
 
     this._flightFormService.createBooking(booking).subscribe();
+    alert('Your reservation has been sent!');
+    window.location.reload();
   }
 }
